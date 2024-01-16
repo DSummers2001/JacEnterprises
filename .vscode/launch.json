@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BoredApiFetcher<jacenterprises>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.jacenterprises.Fetchers.BoredApiFetcher",
+            "projectName": "jacenterprises",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-JacenterprisesApplication<jacenterprises>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.jacenterprises.JacenterprisesApplication",
+            "projectName": "jacenterprises",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

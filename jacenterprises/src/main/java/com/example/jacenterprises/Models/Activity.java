@@ -19,13 +19,13 @@ public class Activity {
 
     private String type;
 
-    private int participants;
+    private String participants;
 
-    private double price;
+    private String price;
 
-    private double accessibility;
+    private String accessibility;
 
-    public Activity(String activity, String type, int participants, double price, double accessibility) {
+    public Activity(String activity, String type, String participants, String price, String accessibility) {
         this.activity = activity;
         this.type = type;
         this.participants = participants;
