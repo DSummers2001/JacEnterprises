@@ -1,35 +1,42 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import ActivityButton from './components/ActivityButton';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activity, setActivity] = useState(null);
+
+  const handleFetchActivity = (newActivity) => {
+    setActivity(newActivity);
+  };
+
+  const handleDeleteActivity = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/delete-activity/${id}`);
+      // Optionally, you can fetch the updated list of saved activities here
+    } catch (error) {
+      console.error('Error deleting activity:', error);
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>Bored Activity App</h1>
+      <ActivityButton onFetchActivity={handleFetchActivity} />
+      {activity && (
+        <div>
+          <h2>Random Activity:</h2>
+          <p>{activity.activity}</p>
+          <p>Type: {activity.type}</p>
+          <p>Participants: {activity.participants}</p>
+          <p>Price: {activity.price}</p>
+          <p>Accessibility: {activity.accessibility}</p>
+          <button onClick={() => handleDeleteActivity(activity.id)}>
+            Delete Activity
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App

@@ -1,33 +1,69 @@
 package com.example.jacenterprises.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
-import com.example.jacenterprises.Models.Activity;
+import com.example.jacenterprises.Models.ActivityEntity;
 import com.example.jacenterprises.Repositories.ActivityRepository;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 
 
 
 @RestController
-public class ActivityController {
+@RequestMapping("/api")
+public class ActivityController{
     @Autowired
     private ActivityRepository activityRepository;
-    
-    @GetMapping("/api/activities")
-    public List<Activity> getAllActivities() {
-        return (List<Activity>) activityRepository.findAll();
+
+    @Value("${bored.api.url}")
+    private String boredApiUrl;
+
+    @GetMapping("/activity")
+    public ResponseEntity<ActivityEntity> fetchActivity() {
+        try {
+            
+            RestTemplate restTemplate = new RestTemplate();
+            ActivityEntity activityEntity = restTemplate.getForObject(boredApiUrl, ActivityEntity.class);
+
+            activityRepository.save(activityEntity);
+
+            return ResponseEntity.ok(activityEntity);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
-    @PostMapping("/api/activities/new")
-    public void saveActivity(@RequestBody Activity activity) {
-        activityRepository.save(activity);
+
+    @GetMapping("/saved-activities")
+    public ResponseEntity<List<ActivityEntity>> getSavedActivities() {
+        List<ActivityEntity> activities = activityRepository.findAll();
+
+        return ResponseEntity.ok(activities);
     }
     
+    @DeleteMapping("/delete-activity/{id}")
+    public ResponseEntity<String> deleteActivity(@PathVariable Long id){
+        try {
+            if (activityRepository.existsById(id)){
+                activityRepository.deleteById(id);
+                return ResponseEntity.ok("Activity deleted successfully!");
+            } else {
+                return ResponseEntity.status(404).body("Activity not found!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Error deleting activity!");
+        }
+    }
 }
