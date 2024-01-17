@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import axios from 'axios';
 
 const ActivityButton = ({ onFetchActivity }) => {
@@ -6,6 +6,8 @@ const ActivityButton = ({ onFetchActivity }) => {
     try {
       const response = await axios.get('http://localhost:8080/api/activity');
       onFetchActivity(response.data);
+
+      window.location.reload();
     } catch (error) {
       console.error('Error fetching activity:', error);
     }
@@ -13,7 +15,7 @@ const ActivityButton = ({ onFetchActivity }) => {
 
   return (
     <button onClick={fetchActivity}>
-      Get Random Activity
+      Random Activity
     </button>
   );
 };

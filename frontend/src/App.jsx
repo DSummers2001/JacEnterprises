@@ -1,40 +1,61 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import ActivityButton from './components/ActivityButton';
+import axios from 'axios';
 
 function App() {
   const [activity, setActivity] = useState(null);
+  const [savedActivities, setSavedActivities] = useState([]);
 
   const handleFetchActivity = (newActivity) => {
     setActivity(newActivity);
   };
 
+  const fetchSavedActivities = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/saved-activities');
+      setSavedActivities(response.data);
+
+    } catch (error){
+      console.error('Error fetching saved activities')
+    }
+  };
+
   const handleDeleteActivity = async (id) => {
     try {
       await axios.delete(`http://localhost:8080/api/delete-activity/${id}`);
-      // Optionally, you can fetch the updated list of saved activities here
+      fetchSavedActivities();
     } catch (error) {
       console.error('Error deleting activity:', error);
     }
   };
 
+  useEffect(() => {
+    fetchSavedActivities();
+  }, []);
+
   return (
     <div>
-      <h1>Bored Activity App</h1>
+      <h2>Need some ideas!</h2>
       <ActivityButton onFetchActivity={handleFetchActivity} />
-      {activity && (
-        <div>
-          <h2>Random Activity:</h2>
-          <p>{activity.activity}</p>
-          <p>Type: {activity.type}</p>
-          <p>Participants: {activity.participants}</p>
-          <p>Price: {activity.price}</p>
-          <p>Accessibility: {activity.accessibility}</p>
-          <button onClick={() => handleDeleteActivity(activity.id)}>
-            Delete Activity
-          </button>
-        </div>
-      )}
+      {activity}
+      <hr />
+      <h2>Saved Activities:</h2>
+      <ul>
+        {savedActivities.map(savedActivity => (
+          <li key={savedActivity.id}>
+            <p><strong>Activity:</strong> {savedActivity.activity}</p>
+            <p><strong>Type:</strong> {savedActivity.type}</p>
+            <p><strong>Participants:</strong> {savedActivity.participants}</p>
+            <p><strong>Price:</strong> {savedActivity.price}</p>
+            <p><strong>Accessibility:</strong> {savedActivity.accessibility}</p>
+            <button onClick={() => handleDeleteActivity(savedActivity.id)}>
+              Delete
+            </button>
+            <hr />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
