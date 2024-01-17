@@ -12,7 +12,7 @@ public class ActivityEntity {
     
     @Id
     @GeneratedValue
-    private Long id;
+    public Long id;
     private String activity;
     private String type;
     private String participants;
