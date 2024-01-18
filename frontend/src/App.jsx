@@ -6,10 +6,20 @@ import axios from 'axios';
 function App() {
   const [activity, setActivity] = useState(null);
   const [savedActivities, setSavedActivities] = useState([]);
+  const [astronomyData, setAstronomyData] = useState([]);
 
   const handleFetchActivity = (newActivity) => {
     setActivity(newActivity);
   };
+
+  const fetchAstronomyData = async () => {
+    try{
+      const response = await axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&count=5');
+      setAstronomyData(response.data)
+    } catch (error){
+      console.error('Error fetching astronomy api')
+    }
+  }
 
   const fetchSavedActivities = async () => {
     try {
@@ -31,11 +41,25 @@ function App() {
   };
 
   useEffect(() => {
+    fetchAstronomyData();
     fetchSavedActivities();
   }, []);
 
   return (
     <div>
+      <div>
+        <h1>Astronomy Information</h1>
+        <ul>
+          {astronomyData.map(savedAstronomy =>(
+            <li key={savedAstronomy.title}>
+            <p><strong>Title:</strong>{savedAstronomy.title}</p>
+            <img src ={savedAstronomy.url} alt="Picture of Astronomy"/>
+            <p><strong>Date:</strong>{savedAstronomy.date}</p>
+            <p><strong>Explanation:</strong>{savedAstronomy.explanation}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
       <h2>Need some ideas!</h2>
       <ActivityButton onFetchActivity={handleFetchActivity} />
       {activity}
