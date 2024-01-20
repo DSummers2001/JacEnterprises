@@ -1,3 +1,116 @@
 body {
-  background-color: #415A77;
+  background-color: #19323C;
+  color: #F2545B;
+  text-align: center;
+}
+
+h1{
+  background-color: #A93F55;
+}
+
+.DProfile {
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.DProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.DProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.SProfile {
+  display: none;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.SProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.SProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.CProfile {
+  display: none;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.CProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.CProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.IProfile {
+  display: none;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.IProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.IProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }

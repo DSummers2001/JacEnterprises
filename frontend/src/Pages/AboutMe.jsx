@@ -1,10 +1,14 @@
+import DillonsImage from './DillonsPic.jpg';
+import IsabelsImage from './Isabel.jpg';
+import CodysImage from './CodysPic.jpg';
+
 const AboutMe = () => {
     return (
     <div>
     <h1>About The Team</h1>
     <div className="CProfile">
         <h2>Cody Pattison</h2>
-        <img src="" alt="Codys' Profile Picture" />
+        <img src={CodysImage} alt="Codys' Profile Picture" />
         <h3>Bio</h3>
         <p>Dedicated and results-driven professional with a proven track record in leadership, project
             management, and business development. Managed up to 18 personnel in the Marine Corps utilizing
@@ -21,12 +25,17 @@ const AboutMe = () => {
     </div>
     <div className="IProfile">
         <h2>Isabel Santiago</h2>
-        <img src="" alt="Isabels' Profile Picture" />
+        <img src={IsabelsImage} alt="Isabels' Profile Picture" />
         <h3>Bio</h3>
-        <p>placeholder text</p>
+        <p>System Administrator with six years of experience in design, implementation, and maintenance of 
+        network architecture and security. Earned the distinguished 2023 Women of Color STEM Technology Rising Star award 
+        for exemplary work in the field, remediating critical vulnerabilities across 20 sites, 6 networks, 
+        and thousands of assets, resulting in a notable 50% reduction in vulnerabilities and enhanced risk management. 
+        Leveraged automation tools (SCCM, Ansible) and programming languages (PowerShell, Python, Bash) to streamline system processes, 
+        resulting in a substantial reduction in manual effort and saving an average of 20 hours per week.</p>
             <h3>Contact</h3>
-            <p>Email: Placeholder@gmail.com</p>
-            <p><a href="">Github</a> | <a href="">LinkedIn</a></p>
+            <p>Email: Isabel.santiagolewis@gmail.com</p>
+            <p><a href="https://github.com/isabel-santiagolewis">Github</a> | <a href="https://www.linkedin.com/in/isabel-santiago-lewis-00b76b1b8/">LinkedIn</a></p>
     </div>
     <div className="SProfile">
         <h2>Sarah Fought</h2>
@@ -39,7 +48,7 @@ const AboutMe = () => {
     </div>
     <div className="DProfile">
         <h2>Dillon Summers</h2>
-        <img src="" alt="Dillons' Profile Picture" />
+        <img src={DillonsImage} alt="Dillons' Profile Picture" />
         <h3>Bio</h3>
         <p>As a recent graduate from the WeCanCodeIT boot camp, I am an enthusiastic and dedicated Junior Full Stack Java Software 
             Developer seeking an opportunity to apply my skills and knowledge in a dynamic work environment. With a solid foundation 
