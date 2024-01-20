@@ -120,3 +120,23 @@ h1{
   width: 75px;
   border-width: 100px;
 }
+
+.CProfileVisible,.SProfileVisible,.IProfileVisible,.DProfileVisible {
+  display: block;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.CProfileHidden,.SProfileHidden,.IProfileHidden,.DProfileHidden {
+  display: none;
+}

@@ -2,18 +2,60 @@ import DillonsImage from './DillonsPic.jpg';
 import IsabelsImage from './Isabel.jpg';
 import CodysImage from './CodysPic.jpg';
 import NextButton from './Next.gif';
+import React, { useState } from 'react';
 
 const AboutMe = () => {
-    const handleButton =() => {
-        console.log("ButtonClicked");
-        const cprofile = document.getElementByClassName("CProfile");
-        cprofile.style.display = "block";
+    const [profiles, setProfile] = useState(1);
+    const [codyIsVisible, setCodyIsVisible] = useState(true);
+    const [sarahIsVisible, setSarahIsVisible] = useState(false);
+    const [isabelIsVisible, setIsabelIsVisible] = useState(false);
+    const [dillonIsVisible, setDillonIsVisible] = useState(false);
+
+    const toggleVisibility = () => {
+      if (profiles>=4){
+        setProfile(1);
+      }
+      else{
+        setProfile(profiles+1);
+      }
+      switch (profiles){
+        case 1:
+            setCodyIsVisible(true);
+            setSarahIsVisible(false);
+            setIsabelIsVisible(false);
+            setDillonIsVisible(false);
+            break;
+        case 2:
+            setCodyIsVisible(false);
+            setSarahIsVisible(true);
+            setIsabelIsVisible(false);
+            setDillonIsVisible(false);
+            break;
+        case 3:
+            setCodyIsVisible(false);
+            setSarahIsVisible(false);
+            setIsabelIsVisible(true);
+            setDillonIsVisible(false);
+            break;
+        case 4:
+            setCodyIsVisible(false);
+            setSarahIsVisible(false);
+            setIsabelIsVisible(false);
+            setDillonIsVisible(true);
+            break;
+        }
     };
+  
+    const CProfile = codyIsVisible ? 'CProfileVisible' : 'CProfileHidden';
+    const SProfile = sarahIsVisible ? 'SProfileVisible' : 'SProfileHidden';
+    const IProfile = isabelIsVisible ? 'IProfileVisible' : 'IProfileHidden';
+    const DProfile = dillonIsVisible ? 'DProfileVisible' : 'DProfileHidden';
+
     return (
     <div>
     <h1>About The Team</h1>
-    <button onClick={handleButton}><img id = "NextButton"src={NextButton} alt="Next Button" /></button>
-    <div className="CProfile">
+    <button onClick={toggleVisibility}><img id = "NextButton"src={NextButton} alt="Next Button" /></button>
+    <div className={CProfile}>
         <h2>Cody Pattison</h2>
         <img src={CodysImage} alt="Codys' Profile Picture" />
         <h3>Bio</h3>
@@ -30,7 +72,7 @@ const AboutMe = () => {
             <p>Email: Codypattison86@gmail.com</p>
             <p><a href="https://github.com/cpattison86/cpattison86.github.io">Github</a> | <a href="https://www.linkedin.com/in/cody-pattison/">LinkedIn</a></p>
     </div>
-    <div className="IProfile">
+    <div className={IProfile}>
         <h2>Isabel Santiago</h2>
         <img src={IsabelsImage} alt="Isabels' Profile Picture" />
         <h3>Bio</h3>
@@ -44,7 +86,7 @@ const AboutMe = () => {
             <p>Email: Isabel.santiagolewis@gmail.com</p>
             <p><a href="https://github.com/isabel-santiagolewis">Github</a> | <a href="https://www.linkedin.com/in/isabel-santiago-lewis-00b76b1b8/">LinkedIn</a></p>
     </div>
-    <div className="SProfile">
+    <div className={SProfile}>
         <h2>Sarah Fought</h2>
         <img src="" alt="Sarahs' Profile Picture" />
         <h3>Bio</h3>
@@ -53,7 +95,7 @@ const AboutMe = () => {
             <p>Email: Placeholder@gmail.com</p>
             <p><a href="">Github</a> | <a href="">LinkedIn</a></p>
     </div>
-    <div className="DProfile">
+    <div className={DProfile}>
         <h2>Dillon Summers</h2>
         <img src={DillonsImage} alt="Dillons' Profile Picture" />
         <h3>Bio</h3>
