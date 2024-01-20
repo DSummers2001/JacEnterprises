@@ -1,11 +1,18 @@
 import DillonsImage from './DillonsPic.jpg';
 import IsabelsImage from './Isabel.jpg';
 import CodysImage from './CodysPic.jpg';
+import NextButton from './Next.gif';
 
 const AboutMe = () => {
+    const handleButton =() => {
+        console.log("ButtonClicked");
+        const cprofile = document.getElementByClassName("CProfile");
+        cprofile.style.display = "block";
+    };
     return (
     <div>
     <h1>About The Team</h1>
+    <button onClick={handleButton}><img id = "NextButton"src={NextButton} alt="Next Button" /></button>
     <div className="CProfile">
         <h2>Cody Pattison</h2>
         <img src={CodysImage} alt="Codys' Profile Picture" />
