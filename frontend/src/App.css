@@ -1,42 +1,116 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background-color: #19323C;
+  color: #F2545B;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1{
+  background-color: #A93F55;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DProfile {
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.DProfile a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.card {
-  padding: 2em;
+.DProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
 
-.read-the-docs {
-  color: #888;
+.SProfile {
+  display: none;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.SProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.SProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.CProfile {
+  display: none;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.CProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.CProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.IProfile {
+  display: none;
+  background-color: #A93F55;
+  color: #19323C;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 8px;
+  border-style: double;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.IProfile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.IProfile img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
