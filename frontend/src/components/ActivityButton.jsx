@@ -38,8 +38,8 @@ const ActivityButton = () => {
   };
 
   return (
-    <div>
-      <h2>Need some ideas!</h2>
+    <div className='activities'>
+      <h2>Getting bored click here for ideas!</h2>
       <button onClick={fetchActivity}>
       Random Activity
       </button>
