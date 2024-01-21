@@ -53,7 +53,7 @@ const AboutMe = () => {
 
     return (
     <div>
-    <h1>About The Team</h1>
+    <h1 id='aboutMeTitle'>About The Team</h1>
     <div className='profilePage'> 
     <button onClick={toggleVisibility}><img id = "NextButton"src={NextButton} alt="Next Button" /></button>
     <div className={CProfile}>
