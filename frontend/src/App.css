@@ -4,137 +4,67 @@ body {
   text-align: center;
 }
 
+.profilePage{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 h1{
   background-color: #A93F55;
 }
 
-.DProfile {
-  background-color: #A93F55;
-  color: #19323C;
-  width: 60%;
-  height: 60%;
-  margin-left: auto;
+.profilePage button{
+  margin-left:0px;
   margin-right: auto;
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 8px;
-  border-style: double;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.DProfile a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.DProfile img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.SProfile {
-  display: none;
-  background-color: #A93F55;
-  color: #19323C;
-  width: 60%;
-  height: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 8px;
-  border-style: double;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.SProfile a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.SProfile img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.CProfile {
-  display: none;
-  background-color: #A93F55;
-  color: #19323C;
-  width: 60%;
-  height: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 8px;
-  border-style: double;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.CProfile a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.CProfile img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-
-.IProfile {
-  display: none;
-  background-color: #A93F55;
-  color: #19323C;
-  width: 60%;
-  height: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 8px;
-  border-style: double;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.IProfile a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.IProfile img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-}
-#NextButton{
-  background-color:#19323C;
+  background-color:#19323C ;
   height: 75px;
   width: 75px;
-  border-width: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
+  outline: none;
+  background-color: transparent;
+  user-select: none;
 }
+
+#NextButton{
+  background-color:#19323C;
+  height: 60px;
+  width: 55px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  outline: none;
+  background-color: transparent;
+  user-select: none;
+}
+
 
 .CProfileVisible,.SProfileVisible,.IProfileVisible,.DProfileVisible {
   display: block;
   background-color: #A93F55;
   color: #19323C;
+  margin-right: 0px;
   width: 60%;
   height: 60%;
   margin-left: auto;
-  margin-right: auto;
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 8px;
   border-style: double;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.CProfileVisible img,.SProfileVisible img,.IProfileVisible img,.DProfileVisible img{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.CProfileVisible a,.SProfileVisible a,.IProfileVisible a,.DProfileVisible a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .CProfileHidden,.SProfileHidden,.IProfileHidden,.DProfileHidden {

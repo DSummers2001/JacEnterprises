@@ -2,14 +2,14 @@ import DillonsImage from './DillonsPic.jpg';
 import IsabelsImage from './Isabel.jpg';
 import CodysImage from './CodysPic.jpg';
 import NextButton from './Next.gif';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const AboutMe = () => {
     const [profiles, setProfile] = useState(1);
-    const [codyIsVisible, setCodyIsVisible] = useState(true);
+    const [codyIsVisible, setCodyIsVisible] = useState(false);
     const [sarahIsVisible, setSarahIsVisible] = useState(false);
     const [isabelIsVisible, setIsabelIsVisible] = useState(false);
-    const [dillonIsVisible, setDillonIsVisible] = useState(false);
+    const [dillonIsVisible, setDillonIsVisible] = useState(true);
 
     const toggleVisibility = () => {
       if (profiles>=4){
@@ -54,6 +54,7 @@ const AboutMe = () => {
     return (
     <div>
     <h1>About The Team</h1>
+    <div className='profilePage'> 
     <button onClick={toggleVisibility}><img id = "NextButton"src={NextButton} alt="Next Button" /></button>
     <div className={CProfile}>
         <h2>Cody Pattison</h2>
@@ -106,6 +107,7 @@ const AboutMe = () => {
             <h3>Contact</h3>
             <p>Email: Dillon.summers2001@gmail.com</p>
             <p><a href="https://github.com/DSummers2001/DSummers2001.github.io">Github</a> | <a href="https://www.linkedin.com/in/dillon-summers/">LinkedIn</a></p>
+    </div>
     </div>
 </div>
     )
