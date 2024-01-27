@@ -1,6 +1,7 @@
 import DillonsImage from './DillonsPic.jpg';
 import IsabelsImage from './Isabel.jpg';
 import CodysImage from './CodysPic.jpg';
+import SarahsImage from './SarahsPic.jpg';
 import NextButton from './Next.gif';
 import { useState } from 'react';
 
@@ -89,12 +90,16 @@ const AboutMe = () => {
     </div>
     <div className={SProfile}>
         <h2>Sarah Fought</h2>
-        <img src="" alt="Sarahs' Profile Picture" />
+        <img src={SarahsImage} alt="Sarahs' Profile Picture" />
         <h3>Bio</h3>
-        <p>placeholder text</p>
+        <p>Hi, I&apos;m Sarah, a devoted mom with a deep passion for technology and an ambitious goal to become a software developer. 
+           My days are a delicate balance between the demands of motherhood and the pursuit of my dream career in the tech industry.
+           Navigating through coding courses, family responsibilities, and late-night coding sessions, I embrace the challenges with 
+           unwavering determination. My journey is a testament to the power of ambition, illustrating that with perseverance and a 
+           supportive environment, I can achieve my goals, even while navigating the complexities of parenthood.</p>
             <h3>Contact</h3>
-            <p>Email: Placeholder@gmail.com</p>
-            <p><a href="">Github</a> | <a href="">LinkedIn</a></p>
+            <p>Email: Sfought3@gmail.com</p>
+            <p><a href="https://github.com/sfought3">Github</a> | <a href="https://www.linkedin.com/in/sarah-fought-366614133/">LinkedIn</a></p>
     </div>
     <div className={DProfile}>
         <h2>Dillon Summers</h2>
